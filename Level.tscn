@@ -35,6 +35,9 @@ texture = ExtResource("1_bexhn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=304802151]
 shape = SubResource("RectangleShape2D_jj4vh")
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1861944550]
+offset = Vector2(0, -100)
+
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=966549382]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=666912714]
