@@ -1,17 +1,32 @@
 [gd_scene format=3 uid="uid://efqihhycxpop"]
 
 [ext_resource type="Script" uid="uid://cn5y5podjtlm4" path="res://bullet.gd" id="1_ayd6b"]
+[ext_resource type="Texture2D" uid="uid://c1nxpcm7aympr" path="res://images/projectile.png" id="2_4s4u5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kjfh8"]
+radius = 22.0
 
 [node name="Area2D" type="Area2D" unique_id=278852654 groups=["damage"]]
 scale = Vector2(-1, -1)
 script = ExtResource("1_ayd6b")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1041444260]
+visible = false
 polygon = PackedVector2Array(10, -5, 94, -13, 72, -31, 125, -13, 68, 20, 88, 2)
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1371253693]
+visible = false
 polygon = PackedVector2Array(-2, -1, 91, -14, 71, -32, 124, -13, 69, 19, 88, 3, 10, -5)
 metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=885468414]
+position = Vector2(30, -18)
+scale = Vector2(4, 4)
+texture = ExtResource("2_4s4u5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=447675542]
+position = Vector2(30, -19)
+shape = SubResource("CircleShape2D_kjfh8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
