@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -750.0
 const GAME_OVER_THRESHOLD = 5e3
+
+@onready var _animated_sprite = $AnimatedSprite2D
 
 func gravity(delta: float):
 	# Add the gravity.
@@ -22,6 +23,13 @@ func input():
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if direction > 0:
+		_animated_sprite.play("right")
+	elif direction < 0:
+		_animated_sprite.play("left")
+	else:
+		_animated_sprite.stop()
 
 func collisions():
 	for i in get_slide_collision_count():
