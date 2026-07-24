@@ -16,7 +16,10 @@ size = Vector2(250, 44)
 radius = 67.00746
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjfh8"]
-size = Vector2(77, 92)
+size = Vector2(77, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rto0b"]
+size = Vector2(64, 10)
 
 [node name="Node2D" type="Node" unique_id=760801393]
 
@@ -81,9 +84,16 @@ texture = ExtResource("7_4eo0i")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=1104459106]
-position = Vector2(-0.5, 0)
+position = Vector2(-0.5, 5)
 shape = SubResource("RectangleShape2D_kjfh8")
 metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D2" unique_id=1427360836]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2/Area2D" unique_id=428618324]
+position = Vector2(-1, -41)
+shape = SubResource("RectangleShape2D_rto0b")
+debug_color = Color(0.9803366, 0, 0.3844903, 0.41960785)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=19908792]
 
@@ -106,3 +116,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "3"
 horizontal_alignment = 1
+
+[connection signal="body_entered" from="CharacterBody2D2/Area2D" to="CharacterBody2D2" method="_on_area_2d_body_entered"]

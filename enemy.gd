@@ -24,3 +24,9 @@ func _process(delta: float) -> void:
 		newBullet.global_position = global_position
 		get_tree().root.add_child(newBullet)
 		print("pew")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if (body.is_in_group("player")):
+		queue_free()
+	pass # Replace with function body.
