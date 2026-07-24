@@ -3,8 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dyn44k75igsrg" path="res://icon.svg" id="1_bexhn"]
 [ext_resource type="PackedScene" uid="uid://bafpsppybqs8c" path="res://Platform.tscn" id="1_wkftn"]
 [ext_resource type="PackedScene" uid="uid://rcxni45cw5lf" path="res://Player.tscn" id="2_t7iv1"]
+[ext_resource type="Texture2D" uid="uid://cdw6jliqlwoju" path="res://images/coin.png" id="3_mxnmf"]
 [ext_resource type="Script" uid="uid://bwn755hx3wwma" path="res://moving_platform.gd" id="3_q4iis"]
 [ext_resource type="Script" uid="uid://bmvuljn1ixelm" path="res://enemy.gd" id="5_m3clv"]
+[ext_resource type="Texture2D" uid="uid://bav1o6e4gyopl" path="res://images/enemy.png" id="7_4eo0i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjfh8"]
 radius = 67.00746
@@ -32,9 +34,10 @@ position = Vector2(253, 416)
 position = Vector2(696, 375)
 shape = SubResource("CircleShape2D_kjfh8")
 
-[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D" unique_id=1442374893]
-position = Vector2(602, 374)
-polygon = PackedVector2Array(6, 8, 35, 44, 86, 63, 133, 58, 160, 34, 157, -36, 113, -64, 55, -64, 30, -46)
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=293313477]
+position = Vector2(699, 373)
+scale = Vector2(4, 4)
+texture = ExtResource("3_mxnmf")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1028087066]
 position = Vector2(454, 182)
@@ -56,8 +59,8 @@ position = Vector2(551, 102)
 script = ExtResource("5_m3clv")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2" unique_id=1201582442]
-texture = ExtResource("1_bexhn")
-metadata/_edit_lock_ = true
+scale = Vector2(2, 2)
+texture = ExtResource("7_4eo0i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=1104459106]
 position = Vector2(-1, 0.5)
