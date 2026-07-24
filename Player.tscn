@@ -11,6 +11,9 @@ size = Vector2(60, 155)
 atlas = ExtResource("3_kne1u")
 region = Rect2(132, 1, 32, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rto0b"]
+size = Vector2(122, 93)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_e80uo"]
 atlas = ExtResource("3_kne1u")
 region = Rect2(165, 1, 32, 32)
@@ -87,6 +90,12 @@ texture = ExtResource("2_kne1u")
 position = Vector2(9, -15.5)
 shape = SubResource("RectangleShape2D_jj4vh")
 
+[node name="Area" type="Area2D" parent="." unique_id=978120157]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=870095738]
+position = Vector2(0, 13.5)
+shape = SubResource("RectangleShape2D_rto0b")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=938161814]
 offset = Vector2(0, -100)
 zoom = Vector2(0.75, 0.75)
@@ -95,4 +104,7 @@ zoom = Vector2(0.75, 0.75)
 position = Vector2(4.9999995, -18.999998)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_kjfh8")
-animation = &"left"
+animation = &"right"
+frame_progress = 0.039387025
+
+[connection signal="area_entered" from="Area" to="." method="_on_area_area_entered"]

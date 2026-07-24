@@ -17,12 +17,13 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [global_group]
 
 player=""
+damage=""
 
 [input]
 
