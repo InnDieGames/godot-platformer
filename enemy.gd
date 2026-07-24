@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const COOLDOWN = .5
+const COOLDOWN = 1
 const BULLET : Resource = preload("res://Bullet.tscn")
 var timer : float = 0
 

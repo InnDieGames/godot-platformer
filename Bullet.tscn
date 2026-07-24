@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cn5y5podjtlm4" path="res://bullet.gd" id="1_ayd6b"]
 
-[node name="Area2D" type="Area2D" unique_id=278852654]
+[node name="Area2D" type="Area2D" unique_id=278852654 groups=["damage"]]
+scale = Vector2(-1, -1)
 script = ExtResource("1_ayd6b")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1041444260]

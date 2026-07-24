@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -750.0
 const GAME_OVER_THRESHOLD = 5e3
+var health = 3
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
@@ -55,3 +56,13 @@ func _physics_process(delta: float) -> void:
 	collisions()
 	
 	check_game_over()
+
+
+func _on_area_area_entered(area: Area2D) -> void:
+	print("entered")
+	if (area.is_in_group("damage")):
+		health -= 1
+		print("you suffered damage :(. remaining health: "+ str(health))
+		area.queue_free()
+		if (health == 0):
+			get_tree().call_deferred("reload_current_scene")
