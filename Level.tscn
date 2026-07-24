@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bwn755hx3wwma" path="res://moving_platform.gd" id="3_q4iis"]
 [ext_resource type="Script" uid="uid://bmvuljn1ixelm" path="res://enemy.gd" id="5_m3clv"]
 [ext_resource type="Texture2D" uid="uid://bav1o6e4gyopl" path="res://images/enemy.png" id="7_4eo0i"]
+[ext_resource type="Script" uid="uid://dlt1426dij38d" path="res://ui.gd" id="8_4eo0i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjfh8"]
 radius = 67.00746
@@ -17,7 +18,7 @@ size = Vector2(518, 63)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjfh8"]
 size = Vector2(124, 123)
 
-[node name="Node2D" type="Node2D" unique_id=4597657]
+[node name="Node2D" type="Node" unique_id=760801393]
 
 [node name="StaticBody2D2" parent="." unique_id=1192229484 instance=ExtResource("1_wkftn")]
 position = Vector2(-494.99988, 415)
@@ -66,3 +67,24 @@ texture = ExtResource("7_4eo0i")
 position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_kjfh8")
 metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=19908792]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=179394483]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_4eo0i")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1073887065]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 36
+text = "3"
+horizontal_alignment = 1

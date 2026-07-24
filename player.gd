@@ -62,6 +62,7 @@ func _on_area_area_entered(area: Area2D) -> void:
 	print("entered")
 	if (area.is_in_group("damage")):
 		health -= 1
+		Global.health_changed.emit(health)
 		print("you suffered damage :(. remaining health: "+ str(health))
 		area.queue_free()
 		if (health == 0):
