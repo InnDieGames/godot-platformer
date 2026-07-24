@@ -9,11 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://bav1o6e4gyopl" path="res://images/enemy.png" id="7_4eo0i"]
 [ext_resource type="Script" uid="uid://dlt1426dij38d" path="res://ui.gd" id="8_4eo0i"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kjfh8"]
-radius = 67.00746
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2k7y"]
 size = Vector2(250, 44)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kjfh8"]
+radius = 67.00746
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjfh8"]
 size = Vector2(77, 92)
@@ -38,6 +38,21 @@ position = Vector2(665, -395)
 [node name="StaticBody2D" parent="." unique_id=1782139307 instance=ExtResource("1_wkftn")]
 position = Vector2(579.5, 605.5)
 
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1028087066]
+position = Vector2(454, 182)
+script = ExtResource("3_q4iis")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=1875731882]
+position = Vector2(249, 22)
+scale = Vector2(4, 4)
+texture = ExtResource("5_mxnmf")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=995927746]
+position = Vector2(249, 31)
+shape = SubResource("RectangleShape2D_d2k7y")
+metadata/_edit_lock_ = true
+
 [node name="CharacterBody2D" parent="." unique_id=2126813668 groups=["player"] instance=ExtResource("2_t7iv1")]
 position = Vector2(253, 416)
 
@@ -54,21 +69,6 @@ metadata/_edit_lock_ = true
 position = Vector2(699, 373)
 scale = Vector2(2, 2)
 texture = ExtResource("3_mxnmf")
-metadata/_edit_lock_ = true
-
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1028087066]
-position = Vector2(454, 182)
-script = ExtResource("3_q4iis")
-
-[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=1875731882]
-position = Vector2(249, 22)
-scale = Vector2(4, 4)
-texture = ExtResource("5_mxnmf")
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=995927746]
-position = Vector2(249, 31)
-shape = SubResource("RectangleShape2D_d2k7y")
 metadata/_edit_lock_ = true
 
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="." unique_id=1530303824]
